@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ditto (〃)
 
-## Getting Started
+**Design studies through reproduction.**
 
-First, run the development server:
+Ditto is a design-to-code practice space built on the belief that the fastest way to master visual languages is through deliberate reproduction. Each study is a "ditto" of an existing work—an exercise in seeing, measuring, and rebuilding.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Core Concept
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The ditto mark (〃) represents the act of repetition. By rebuildling existing high-fidelity designs, we internalize the rules of rhythm, contrast, typography, and craftsmanship.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js](https://nextjs.org) (App Router)
+- **Styling**: [Tailwind CSS 4.0](https://tailwindcss.com)
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/`: Next.js application directory.
+  - `about/`: The manifesto page.
+  - `dittos/`: Individual design studies.
+  - `globals.css`: Core design system and theme variables.
+- `lib/dittos.ts`: Registry of all studies and their metadata.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ditto &copy; 2026
