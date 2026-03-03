@@ -1,26 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --app-bg: #080808;
+  --app-surface: #121212;
+  --app-border: #242424;
+  --app-border-hover: #2a2a2a;
+  --app-text: #f5f5f3;
+  --app-muted: #bababa;
+  --app-accent: #ffffff;
+  --font-mono: 'DM Mono', monospace;
+  --font-sans: 'DM Sans', sans-serif;
+
+  --transition-cubic-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  --gutter: 2rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 1024px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 4rem;
   }
 }
 
+@media (min-width: 1536px) {
+  :root {
+    --gutter: 6rem;
+  }
+}
+
+html {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--app-text);
+  color: var(--app-bg);
+}
+
+.text-xxs {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+@keyframes ditto-breathe {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-3px) scale(1.08);
+    opacity: 1;
+  }
+}
+
+.ditto-mark {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  vertical-align: super;
+  margin-left: 0.2rem;
+  color: var(--app-muted);
+  transition: all 0.5s var(--transition-cubic-in-out);
+}
+
+.group:hover .ditto-mark,
+.animate-breathe .ditto-mark {
+  color: var(--app-accent);
+  animation: ditto-breathe 4s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.interactive-lift {
+  transition: transform 0.5s var(--transition-spring), box-shadow 0.5s var(--transition-spring), border-color 0.5s ease;
+}
+
+.interactive-lift:hover {
+  transform: translateY(-8px);
+  border-color: var(--app-border-hover);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.8);
 }
