@@ -2,6 +2,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { dittos, getDitto } from "@/lib/dittos"
 import { LikeButton } from "@/components/LikeButton"
+import { KeyboardNavigation } from "@/components/KeyboardNavigation"
 
 export async function generateStaticParams() {
   return dittos.map((ditto) => ({ slug: ditto.slug }))
@@ -22,6 +23,10 @@ export default async function DittoPage({ params }: { params: { slug: string } }
   const ditto = getDitto(resolvedParams.slug)
   if (!ditto) notFound()
 
+  const currentIndex = dittos.findIndex(d => d.slug === resolvedParams.slug)
+  const prevSlug = currentIndex > 0 ? dittos[currentIndex - 1].slug : undefined
+  const nextSlug = currentIndex < dittos.length - 1 ? dittos[currentIndex + 1].slug : undefined
+
   let DittoComponent: React.ComponentType | null = null
   try {
     const mod = await import(`./${resolvedParams.slug}/page`)
@@ -32,6 +37,7 @@ export default async function DittoPage({ params }: { params: { slug: string } }
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "var(--app-bg)" }}>
+      <KeyboardNavigation prevSlug={prevSlug} nextSlug={nextSlug} />
       <header
         className="h-24 border-b flex items-center justify-between sticky top-0 z-50 glass"
         style={{

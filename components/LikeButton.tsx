@@ -73,9 +73,26 @@ export function LikeButton({ slug, className = "", showCount = true }: LikeButto
     }
   }, [slug])
 
-  const handleLike = async (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ignore if user is typing in an input
+      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') {
+        return
+      }
+      if (e.key.toLowerCase() === 'l') {
+        handleLike(e)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [slug, isLiked])
+
+  const handleLike = async (e?: React.MouseEvent | KeyboardEvent) => {
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
 
     if (isLiked) return
 
@@ -87,11 +104,6 @@ export function LikeButton({ slug, className = "", showCount = true }: LikeButto
     setLikes(prev => (prev !== null ? prev + 1 : 1))
 
     // Use RPC to increment to avoid race conditions
-    // Requires a database function:
-    // create function increment_likes(row_slug text) returns void as $$
-    //   update likes set count = count + 1 where slug = row_slug;
-    //   insert into likes (slug, count) select row_slug, 1 where not exists (select 1 from likes where slug = row_slug);
-    // $$ language sql;
 
     const { error } = await supabase.rpc('increment_likes', { row_slug: slug })
 
