@@ -2,13 +2,16 @@
 @import "tailwindcss";
 
 :root {
-  --app-bg: #080808;
-  --app-surface: #121212;
-  --app-border: #242424;
-  --app-border-hover: #2a2a2a;
+  /* Dark Mode (Default) */
+  --app-bg: #0c0c0c;
   --app-text: #f5f5f3;
-  --app-muted: #bababa;
+  --app-surface: #141414;
+  --app-surface-hover: #1c1c1c;
+  --app-border: #2a2a2a;
+  --app-border-hover: #3a3a3a;
+  --app-muted: #888888;
   --app-accent: #ffffff;
+
   --font-mono: 'DM Mono', monospace;
   --font-sans: 'DM Sans', sans-serif;
 
@@ -16,6 +19,18 @@
   --transition-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   --gutter: 2rem;
+}
+
+.light {
+  /* Bone Light Mode */
+  --app-bg: #f5f5f3;
+  --app-text: #0c0c0c;
+  --app-surface: #ffffff;
+  --app-surface-hover: #f0f0ee;
+  --app-border: #e2e2df;
+  --app-border-hover: #d1d1ce;
+  --app-muted: #666666;
+  --app-accent: #000000;
 }
 
 @media (min-width: 1024px) {
@@ -89,10 +104,10 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--app-surface) 40%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid color-mix(in srgb, var(--app-text) 8%, transparent);
 }
 
 .interactive-lift {
@@ -102,5 +117,5 @@ body {
 .interactive-lift:hover {
   transform: translateY(-8px);
   border-color: var(--app-border-hover);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
 }

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { dittos } from "@/lib/dittos"
 import DittoCard from "./DittoCard"
+import { ThemeToggle } from "@/components/ThemeToggle"
 
 export default function Home() {
   return (
@@ -62,6 +63,10 @@ export default function Home() {
               About
             </p>
           </Link>
+
+          <div className="flex items-center pl-4 border-l" style={{ borderColor: "color-mix(in srgb, var(--app-text) 10%, transparent)" }}>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 

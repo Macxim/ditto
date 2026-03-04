@@ -12,10 +12,10 @@ function DittoCard({ ditto }: { ditto: (typeof dittos)[number] }) {
           borderColor: "var(--app-border)"
         }}
       >
-        <div className="aspect-[4/3] relative overflow-hidden bg-[#0a0a0a]">
+        <div className="aspect-[4/3] relative overflow-hidden" style={{ background: "color-mix(in srgb, var(--app-surface) 50%, transparent)" }}>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <span
-              className="text-6xl font-light opacity-[0.2] select-none uppercase tracking-tighter"
+              className="text-6xl font-light opacity-[0.05] select-none uppercase tracking-tighter"
               style={{ fontFamily: "var(--font-sans)" }}
             >
               {ditto.slug}
@@ -29,7 +29,7 @@ function DittoCard({ ditto }: { ditto: (typeof dittos)[number] }) {
               <span className="text-4xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">〃</span>
               <span
                 className="text-xxs tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-700 delay-150"
-                style={{ color: "#fff", fontFamily: "var(--font-mono)" }}
+                style={{ color: "var(--app-text)", fontFamily: "var(--font-mono)" }}
               >
                 Explore
               </span>
@@ -47,7 +47,7 @@ function DittoCard({ ditto }: { ditto: (typeof dittos)[number] }) {
                 {ditto.title}
               </h2>
               <div className="flex items-center gap-3">
-                <div className="w-4 h-px bg-white/30" />
+                <div className="w-4 h-px" style={{ background: "color-mix(in srgb, var(--app-text) 10%, transparent)" }} />
                 <p
                   className="text-xxs uppercase tracking-[0.25em] font-mono"
                   style={{ color: "var(--app-muted)" }}

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ThemeToggle } from "@/components/ThemeToggle"
 
 export default function AboutPage() {
   return (
@@ -11,14 +12,17 @@ export default function AboutPage() {
       }}
     >
       <header className="mb-32 max-w-7xl mx-auto w-full">
-        <Link
-          href="/"
-          className="group flex items-center gap-4 text-xxs uppercase tracking-[0.3em] hover:text-white transition-all w-fit"
-          style={{ color: "var(--app-muted)", fontFamily: "var(--font-mono)" }}
-        >
-          <span className="text-xl transition-transform group-hover:-translate-x-2 duration-500 ease-spring">←</span>
-          Index
-        </Link>
+        <div className="flex justify-between items-center">
+          <Link
+            href="/"
+            className="group flex items-center gap-4 text-xxs uppercase tracking-[0.3em] transition-all w-fit"
+            style={{ color: "var(--app-muted)", fontFamily: "var(--font-mono)" }}
+          >
+            <span className="text-xl transition-transform group-hover:-translate-x-2 duration-500 ease-spring" style={{ color: "var(--app-accent)" }}>←</span>
+            Index
+          </Link>
+          <ThemeToggle />
+        </div>
       </header>
 
       <section className="max-w-4xl mx-auto w-full flex-1 mb-40">
@@ -36,7 +40,7 @@ export default function AboutPage() {
 
           <div
             className="grid sm:grid-cols-2 gap-12 pt-12 border-t"
-            style={{ borderColor: "rgba(255,255,255,0.05)" }}
+            style={{ borderColor: "color-mix(in srgb, var(--app-text) 10%, transparent)" }}
           >
             <div className="space-y-6">
               <p className="text-xxs uppercase tracking-[0.4em] opacity-60 font-mono">
@@ -65,7 +69,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <footer className="pb-12 max-w-7xl mx-auto w-full border-t pt-12 flex justify-between items-end" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+      <footer className="pb-12 max-w-7xl mx-auto w-full border-t pt-12 flex justify-between items-end" style={{ borderColor: "color-mix(in srgb, var(--app-text) 10%, transparent)" }}>
         <div className="space-y-2">
           <p className="text-xxs uppercase tracking-[0.5em] opacity-80 font-mono">
             Ditto &copy; 2026
