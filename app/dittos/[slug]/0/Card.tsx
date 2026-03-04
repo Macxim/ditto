@@ -43,9 +43,9 @@ function Card({
         </p>
 
         <div className="flex align-center mt-4 gap-0.5">
-          {tags?.map((tag) => (
+          {tags?.map((tag, index) => (
             <span
-              key={tag}
+              key={`${tag}-${index}`}
               className="rounded-[10px] border-2 border-gray-200/80 px-3 py-1.5 text-xs uppercase font-semibold text-violet-800 shadow-xs"
             >
               {tag}
