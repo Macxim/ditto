@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { dittos, getDitto } from "@/lib/dittos"
+import { LikeButton } from "@/components/LikeButton"
 
 export async function generateStaticParams() {
   return dittos.map((ditto) => ({ slug: ditto.slug }))
@@ -61,6 +62,8 @@ export default async function DittoPage({ params }: { params: { slug: string } }
         </div>
 
         <div className="flex items-center gap-8">
+          <LikeButton slug={ditto.slug} />
+
           <div className="text-right hidden sm:block">
             <p className="text-[10px] uppercase tracking-[0.25em] opacity-80 mb-1 font-mono" style={{ color: "var(--app-muted)" }}>
               Artist

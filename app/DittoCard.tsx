@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { dittos } from "@/lib/dittos"
+import { LikeButton } from "@/components/LikeButton"
 
 function DittoCard({ ditto }: { ditto: (typeof dittos)[number] }) {
   return (
@@ -56,12 +57,15 @@ function DittoCard({ ditto }: { ditto: (typeof dittos)[number] }) {
                 </p>
               </div>
             </div>
-            <span
-              className="text-xs shrink-0 tabular-nums opacity-40 font-mono mt-1"
-              style={{ color: "var(--app-muted)" }}
-            >
-              #{ditto.slug}
-            </span>
+            <div className="flex flex-col items-end gap-2">
+              <LikeButton slug={ditto.slug} />
+              <span
+                className="text-xs shrink-0 tabular-nums opacity-40 font-mono mt-1"
+                style={{ color: "var(--app-muted)" }}
+              >
+                #{ditto.slug}
+              </span>
+            </div>
           </div>
         </div>
 
