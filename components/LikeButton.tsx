@@ -137,7 +137,7 @@ export function LikeButton({ slug, className = "", showCount = true }: LikeButto
             scale: [1, 1.3, 1],
           } : {}}
           transition={{ duration: 0.4 }}
-          className={`block ${isLiked ? 'text-white' : 'text-current opacity-40 group-hover:opacity-100 group-hover:text-red-400'} transition-colors duration-300`}
+          className={`block ${isLiked ? 'text-[var(--app-muted)]' : 'text-current opacity-40 group-hover:opacity-100 group-hover:text-red-400'} transition-colors duration-300`}
         >
           <HeartIcon filled={isLiked} />
         </motion.div>
