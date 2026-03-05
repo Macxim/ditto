@@ -39,7 +39,7 @@ export default function Ditto1() {
           Photo by <a href="https://unsplash.com/@robertbye?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Robert Bye</a> on <a href="https://unsplash.com/photos/yellow-car-running-on-the-street-between-the-building-during-daytime-WTPp4wgourk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> and by <a href="https://unsplash.com/@gcmak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Gordon Mak</a> on <a href="https://unsplash.com/photos/san-francisco-bridge-usa-rX2cj2FD4do?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </div>
 
-        <div className="flex items-baseline gap-[60px]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-baseline gap-12 lg:gap-[60px] py-12 lg:py-0">
 
           {/* Card Full */}
           <motion.div
