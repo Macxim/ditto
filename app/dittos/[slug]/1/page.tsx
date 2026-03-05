@@ -93,13 +93,13 @@ export default function Ditto1() {
                 animate="visible"
                 className="mb-6"
               >
-                <motion.h2 variants={fadeUp} className="font-bold text-3xl">New York</motion.h2>
+                <motion.h2 variants={fadeUp} className="font-bold text-3xl text-white">New York</motion.h2>
                 <motion.p variants={fadeUp} className="text-base text-gray-400">Economy</motion.p>
                 <motion.ul variants={fadeUp} className="flex items-center gap-5 mt-4 text-base">
-                  <li className="flex gap-2.5">
+                  <li className="flex gap-2.5 text-white">
                     <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path className="fill-[#d3d2d2]" d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"></path></svg>
                     <span>from <span className="font-semibold">$120</span></span></li>
-                  <li className="flex gap-2.5">
+                  <li className="flex gap-2.5 text-white">
                     <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path className="fill-[#d3d2d2]" d="M185.33,114.21l29.14-27.42.17-.17a32,32,0,0,0-45.26-45.26c0,.06-.11.11-.17.17L141.79,70.67l-83-30.2a8,8,0,0,0-8.39,1.86l-24,24a8,8,0,0,0,1.22,12.31l63.89,42.59L76.69,136H56a8,8,0,0,0-5.65,2.34l-24,24A8,8,0,0,0,29,175.42l36.82,14.73,14.7,36.75.06.16a8,8,0,0,0,13.18,2.47l23.87-23.88A8,8,0,0,0,120,200V179.31l14.76-14.76,42.59,63.89a8,8,0,0,0,12.31,1.22l24-24a8,8,0,0,0,1.86-8.39Zm-.07,97.23-42.59-63.88A8,8,0,0,0,136.8,144c-.27,0-.53,0-.79,0a8,8,0,0,0-5.66,2.35l-24,24A8,8,0,0,0,104,176v20.69L90.93,209.76,79.43,181A8,8,0,0,0,75,176.57l-28.74-11.5L59.32,152H80a8,8,0,0,0,5.66-2.34l24-24a8,8,0,0,0-1.22-12.32L44.56,70.74l13.5-13.49,83.22,30.26a8,8,0,0,0,8.56-2L180.78,52.6A16,16,0,0,1,203.4,75.23l-32.87,30.93a8,8,0,0,0-2,8.56l30.26,83.22Z"></path></svg>
                     <span><span className="font-semibold">JFK</span></span></li>
                 </motion.ul>
