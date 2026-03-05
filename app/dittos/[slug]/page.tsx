@@ -50,19 +50,19 @@ export default async function DittoPage({ params }: { params: { slug: string } }
         <div className="flex items-center gap-10">
           <Link
             href="/"
-            className="group flex items-center gap-4 text-xxs uppercase tracking-[0.3em] hover:text-white transition-all"
+            className="group flex items-center gap-4 text-xxs uppercase tracking-[0.3em] hover:text-[var(--app-accent)] transition-all"
             style={{ color: "var(--app-muted)", fontFamily: "var(--font-mono)" }}
           >
             <span className="text-xl transition-transform group-hover:-translate-x-2 duration-500 ease-spring">←</span>
             Index
           </Link>
-          <div className="h-6 w-px bg-black/10" />
+          <div className="h-6 w-px bg-[var(--app-border)]" />
           <div className="flex flex-col gap-1">
             <h1 className="text-base font-medium tracking-tight" style={{ color: "var(--app-text)" }}>
               {ditto.title} <span className="opacity-30" style={{ color: "var(--app-muted)" }}>—</span> <span className="text-sm" style={{ color: "var(--app-muted)" }}>{ditto.description}</span>
             </h1>
             <p className="text-xxs uppercase tracking-[0.15em] font-mono" style={{ color: "var(--app-muted)" }}>
-              Study {ditto.slug}
+              Study {ditto.slug} <a href={ditto.authorUrl} target="_blank" rel="noopener noreferrer" title="View original" className="text-[var(--app-text)]/80 rounded-full border border-[var(--app-border)] px-3 py-1 hover:bg-[var(--app-surface-hover)] hover:border-[var(--app-border-hover)] transition-all duration-500">View original 〃</a>
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default async function DittoPage({ params }: { params: { slug: string } }
             </p>
           </div>
           {ditto.authorUrl && (
-            <Link href={ditto.authorUrl} target="_blank" rel="noopener noreferrer" title="View original" className="h-12 w-12 rounded-full border border-black/10 flex items-center justify-center text-3xl opacity-40 hover:opacity-100 hover:scale-110 hover:border-black/20 transition-all duration-500">
+            <Link href={ditto.authorUrl} target="_blank" rel="noopener noreferrer" title="View original" className="h-12 w-12 rounded-full border border-[var(--app-border)] flex items-center justify-center text-3xl opacity-40 hover:opacity-100 hover:scale-110 hover:border-[var(--app-border-hover)] transition-all duration-500" style={{ color: "var(--app-text)" }}>
               〃
             </Link>
           )}
@@ -87,7 +87,7 @@ export default async function DittoPage({ params }: { params: { slug: string } }
       </header>
 
       <main
-        className="flex-1 relative flex flex-col bg-black/[0.03]"
+        className="flex-1 relative flex flex-col bg-[var(--app-surface-hover)]/30"
       >
         {DittoComponent ? (
           <DittoComponent />
