@@ -1,0 +1,37 @@
+/*
+  Ditto 1
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --f-display: 'Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont';
+}
+
+.ditto-1 {
+  --c-bg: #f5f5f7;
+}
+
+.gradient-card::after {
+  content: "";
+  z-index: -1;
+  pointer-events: none;
+  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 6%, rgba(255, 255, 255, 0) 28%);
+}
+
+.blurred {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 1%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%);
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}

@@ -21,6 +21,16 @@ export const dittos: Ditto[] = [
     date: "2026-03-03",
     tags: ["cards", "light", "motion", "job-board"],
   },
+  {
+    slug: "1",
+    title: "City flight ticket booking cards",
+    description: "Travel destination cards with pricing and call-to-action",
+    source: "Dribbble",
+    author: "Robin Holesinsky",
+    authorUrl: "https://dribbble.com/shots/26039541-City-flight-ticket-booking-cards",
+    date: "2026-03-05",
+    tags: ["cards", "premium", "booking", "travel"],
+  },
 ]
 
 export function getDitto(slug: string): Ditto | undefined {
