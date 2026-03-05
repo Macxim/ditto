@@ -39,7 +39,7 @@ export default async function DittoPage({ params }: { params: { slug: string } }
     <div className="min-h-screen flex flex-col" style={{ background: "var(--app-bg)" }}>
       <KeyboardNavigation prevSlug={prevSlug} nextSlug={nextSlug} />
       <header
-        className="h-24 border-b flex items-center justify-between sticky top-0 z-50 glass"
+        className="h-auto py-4 md:h-24 border-b flex flex-col md:flex-row items-center justify-between sticky top-0 z-50 glass gap-4 md:gap-0"
         style={{
           background: "var(--app-bg)",
           borderColor: "var(--app-border)",
@@ -47,7 +47,7 @@ export default async function DittoPage({ params }: { params: { slug: string } }
           paddingRight: "var(--gutter)"
         }}
       >
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-4 md:gap-10 w-full md:w-auto justify-between md:justify-start">
           <Link
             href="/"
             className="group flex items-center gap-4 text-xxs uppercase tracking-[0.3em] hover:text-[var(--app-accent)] transition-all"
@@ -67,7 +67,7 @@ export default async function DittoPage({ params }: { params: { slug: string } }
           </div>
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8 w-full md:w-auto justify-between md:justify-end border-t md:border-0 pt-4 md:pt-0" style={{ borderColor: "var(--app-border)" }}>
           <LikeButton slug={ditto.slug} />
 
           <div className="text-right hidden sm:block">

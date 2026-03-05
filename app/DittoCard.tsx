@@ -38,7 +38,7 @@ function DittoCard({ ditto }: { ditto: (typeof dittos)[number] }) {
           </div>
         </div>
 
-        <div className="px-10 py-9">
+        <div className="px-6 py-6 md:px-10 md:py-9">
           <div className="flex items-start justify-between gap-8">
             <div className="flex-1 min-w-0">
               <h2

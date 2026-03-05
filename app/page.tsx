@@ -6,14 +6,14 @@ import { ThemeToggle } from "@/components/ThemeToggle"
 export default function Home() {
   return (
     <main
-      className="min-h-screen py-20"
+      className="min-h-screen py-10 md:py-20"
       style={{
         paddingLeft: "var(--gutter)",
         paddingRight: "var(--gutter)"
       }}
     >
       <header
-        className="mb-24 flex items-baseline justify-between max-w-7xl mx-auto"
+        className="mb-12 md:mb-24 flex flex-col md:flex-row md:items-baseline justify-between max-w-7xl mx-auto gap-10 md:gap-0"
       >
         <div className="group cursor-default animate-breathe">
           <p
@@ -83,7 +83,7 @@ export default function Home() {
         <div
           className="grid gap-12 pb-40 max-w-7xl mx-auto"
           style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))",
           }}
         >
           {dittos.map((ditto) => (
