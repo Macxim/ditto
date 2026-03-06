@@ -11,4 +11,7 @@
 
 .ditto-0 {
   --c-bg: #FFF;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

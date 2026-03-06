@@ -20,13 +20,15 @@ function Card({
       className={`rounded-4xl w-[320px] h-auto p-1 border border-white/30`}
       style={{
         backgroundColor: color,
-        boxShadow: `0 1px 4px 0 ${Color(color).darken(0.2).alpha(0.8)}, 0 1px 6px 0 rgba(0, 0, 0, 0.1)`,
+        boxShadow: `0 4px 16px 0 ${Color(color).darken(0.15).alpha(0.35).string()}, 0 2px 6px 0 rgba(0,0,0,0.06)`,
+        willChange: "transform",
+        backfaceVisibility: "hidden",
       }}
     >
       <div
         className="bg-white rounded-[28px] p-8 flex flex-col"
         style={{
-          boxShadow: `0 1px 1px 0 ${Color(color).darken(0.2).alpha(0.8)}, 0 1px 4px 0 rgba(0, 0, 0, 0.05)`,
+          boxShadow: `0 1px 3px 0 rgba(0,0,0,0.06), 0 1px 2px 0 rgba(0,0,0,0.04)`,
         }}
       >
         <div
@@ -35,18 +37,19 @@ function Card({
           className="mb-4"
         />
 
-        <h2 className="text-xl font-bold text-blue-900 font-display">
+        <h2 className="text-2xl font-bold text-slate-800 font-display leading-tight">
           {title}
         </h2>
-        <p className="text-lg text-gray-500 font-display font-semibold">
+
+        <p className="text-base text-slate-400 font-display font-medium mt-0.5">
           {salary}
         </p>
 
-        <div className="flex align-center mt-4 gap-0.5">
+        <div className="flex align-center mt-4 gap-1">
           {tags?.map((tag, index) => (
             <span
               key={`${tag}-${index}`}
-              className="rounded-[10px] border-2 border-gray-200/80 px-3 py-1.5 text-xs uppercase font-semibold text-violet-800 shadow-xs"
+              className="rounded-[10px] border-2 border-gray-200/80 px-3 py-1.5 text-xs uppercase font-semibold text-[#573bcc] isolate"
             >
               {tag}
             </span>

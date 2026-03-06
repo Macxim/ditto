@@ -12,7 +12,6 @@ const titles = [
   "QA Engineer",
   "AI Engineer",
   "Cloud Architect",
-  "Cybersecurity Analyst",
 ];
 
 const tags = [
@@ -50,23 +49,21 @@ const salaryRanges = [
 ];
 
 const colors = [
-  "#fca5a5",
-  "#fdba74",
-  "#fcd34d",
-  "#fde047",
-  "#bef264",
-  "#86efac",
-  "#6ee7b7",
-  "#5eead4",
-  "#67e8f9",
-  "#7dd3fc",
-  "#93c5fd",
-  "#a5b4fc",
-  "#c4b5fd",
-  "#d8b4fe",
-  "#f0abfc",
-  "#f9a8d4",
-  "#fda4af",
+  "#F9C9B6",
+  "#C8B8F8",
+  "#FAE29F",
+  "#A8E6CF",
+  "#A8D8F0",
+  "#F4B8C8",
+  "#B8E8D0",
+  "#D4C5F9",
+  "#FBBF9A",
+  "#B5D8F7",
+  "#F9C6D0",
+  "#C3EFC3",
+  "#F7D6A0",
+  "#D0C0F0",
+  "#A0DFD8",
 ];
 
 const logos = [

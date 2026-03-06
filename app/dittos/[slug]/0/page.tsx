@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import "./ditto.css"
+import "./ditto.css";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import { colors, logos, salaryRanges, tags, titles } from "./data";
@@ -77,6 +77,8 @@ function DraggableCard({
               y,
               rotate: targetRotate,
               zIndex: index,
+              willChange: "transform",
+              backfaceVisibility: "hidden",
             }
       }
       drag
@@ -151,45 +153,57 @@ export default function Ditto0() {
       style={{ background: "var(--c-bg)", fontFamily: "var(--f-body)" }}
     >
       <div
-      className={`m-4 rounded-md flex flex-col items-center justify-center bg-violet-100 relative border border-violet-800/5 ${
-        mode === "grid"
-          ? "min-h-screen py-8"
-          : "w-[calc(100vw-2rem)] h-[calc(100vh-2rem)]"
-      }`}
-    >
-      <div className="absolute top-4 right-4 flex gap-2 z-10">
-        <button type="button" className={`bg-violet-500 hover:bg-violet-600 ${buttonClass}`} onClick={handleGrid}>
-          Grid
-        </button>
-        <button type="button" className={`bg-violet-600 hover:bg-violet-700 ${buttonClass}`} onClick={handleStack}>
-          Stack
-        </button>
-        <button type="button" className={`bg-violet-700 hover:bg-violet-800 ${buttonClass}`} onClick={handleShuffle}>
-          Shuffle
-        </button>
-      </div>
-
-      <div
-        className={
+        className={`m-4 rounded-md flex flex-col items-center justify-center bg-violet-100 relative border border-violet-800/5 ${
           mode === "grid"
-            ? "grid grid-cols-3 gap-4 p-4"
-            : "relative w-96 h-[28rem]"
-        }
+            ? "min-h-screen py-8"
+            : "w-[calc(100vw-2rem)] h-[calc(100vh-2rem)]"
+        }`}
       >
-        {data.map((item, i) => (
-          <DraggableCard
-            key={item.id}
-            item={item}
-            index={i}
-            mode={mode}
-            targetX={mode === "shuffle" ? offsets[i].x : 0}
-            targetY={mode === "shuffle" ? offsets[i].y : 0}
-            targetRotate={mode === "shuffle" ? offsets[i].rotation : 0}
-            resetKey={resetKey}
-          />
-        ))}
+        <div className="absolute top-4 right-4 flex gap-2 z-10">
+          <button
+            type="button"
+            className={`bg-violet-500 hover:bg-violet-600 ${buttonClass}`}
+            onClick={handleGrid}
+          >
+            Grid
+          </button>
+          <button
+            type="button"
+            className={`bg-violet-600 hover:bg-violet-700 ${buttonClass}`}
+            onClick={handleStack}
+          >
+            Stack
+          </button>
+          <button
+            type="button"
+            className={`bg-violet-700 hover:bg-violet-800 ${buttonClass}`}
+            onClick={handleShuffle}
+          >
+            Shuffle
+          </button>
+        </div>
+
+        <div
+          className={
+            mode === "grid"
+              ? "grid grid-cols-3 gap-4 p-4"
+              : "relative w-96 h-[28rem]"
+          }
+        >
+          {data.map((item, i) => (
+            <DraggableCard
+              key={item.id}
+              item={item}
+              index={i}
+              mode={mode}
+              targetX={mode === "shuffle" ? offsets[i].x : 0}
+              targetY={mode === "shuffle" ? offsets[i].y : 0}
+              targetRotate={mode === "shuffle" ? offsets[i].rotation : 0}
+              resetKey={resetKey}
+            />
+          ))}
+        </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }
