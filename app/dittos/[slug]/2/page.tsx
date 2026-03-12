@@ -52,7 +52,7 @@ export default function Ditto2() {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          className="w-full sm:w-6/10 p-10 rounded-[48px] card"
+          className="w-full sm:w-7/10 p-10 rounded-[48px] card"
         >
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -67,10 +67,10 @@ export default function Ditto2() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.92 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="mb-8 text-white/80 text-lg max-w-[80%]"
+            className="mb-8 text-white/80 text-xl max-w-[80%]"
           >
             A community focused on strategic planning, vision, long-term goals
-            and decision-making processes. We discuss new approaches, framework
+            and decision-making processes. We discuss new approaches, frameworks
             and real practice.
           </motion.p>
 
@@ -115,7 +115,7 @@ export default function Ditto2() {
           </dl>
 
           <motion.div
-            className="flex flex-col sm:flex-row items-end gap-3 sm=gap-6"
+            className="flex flex-col sm:flex-row items-end gap-2.5 sm:gap-5"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.45 }}
@@ -126,7 +126,7 @@ export default function Ditto2() {
               whileTap={{ scale: 0.97 }}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.15 }}
-              className="w-full sm:w-auto cursor-pointer flex items-center gap-2 font-medium rounded-xl px-5 py-2.5 text-black bg-white border-[0.5px] border-[rgba(18,74,192,1)]"
+              className="w-full sm:w-auto cursor-pointer flex items-center gap-2.5 font-medium rounded-xl px-6 py-2.5 text-black bg-white border-[0.5px] border-[rgba(18,74,192,1)]"
             >
               <svg
                 className="w-5 h-5 fill-black"
@@ -146,7 +146,7 @@ export default function Ditto2() {
               initial={{ backgroundColor: "rgba(255,255,255,0.14)" }}
               animate={{ backgroundColor: "rgba(255,255,255,0.14)" }}
               transition={{ duration: 0.15 }}
-              className="w-full sm:w-auto cursor-pointer flex items-center gap-2 font-medium rounded-xl bg-white/[.14] px-5 py-2.5"
+              className="w-full sm:w-auto cursor-pointer flex items-center gap-2.5 font-medium rounded-xl bg-white/[.14] px-6 py-2.5"
             >
               <svg
                 className="w-5 h-5 fill-white"
@@ -164,7 +164,7 @@ export default function Ditto2() {
               initial={{ backgroundColor: "rgba(255,255,255,0.14)" }}
               animate={{ backgroundColor: "rgba(255,255,255,0.14)" }}
               transition={{ duration: 0.15 }}
-              className="w-full sm:w-auto cursor-pointer flex items-center gap-2 font-medium rounded-xl bg-white/[.14] px-5 py-2.5"
+              className="w-full sm:w-auto cursor-pointer flex items-center gap-2.5 font-medium rounded-xl bg-white/[.14] px-6 py-2.5"
             >
               <svg
                 className="w-5 h-5 fill-white"

@@ -14,9 +14,9 @@
 .ditto-2 {
   --c-bg: #f8f8f8;
   --blue-gradient: radial-gradient(
-    ellipse 55% 50% at 64% 38%,
-    #497bec 0%,
-    #2562e3 40%,
+    circle at 71% 28%,
+    #4b7cee 0%,
+    #2562e3 28%,
     #2265ed 100%
   );
 }
