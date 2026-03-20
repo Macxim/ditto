@@ -35,7 +35,7 @@ export const dittos: Ditto[] = [
   },
   {
     slug: "2",
-    title: "Discussion Forum Card",
+    title: "Discussion forum card",
     description:
       "Community group card with serif title, stats, and action buttons.",
     source: "Dribbble",
@@ -44,6 +44,17 @@ export const dittos: Ditto[] = [
     date: "2026-03-10",
     tags: ["card", "community", "stats", "blue", "gradient", "buttons"],
   },
+  {
+    slug: "3",
+    title: "Features bento grid",
+    description:
+      "Bento grid showcasing feature cards with minimal icons, bold titles, and short descriptions.",
+    source: "Dribbble",
+    author: "Virgil Pana",
+    authorUrl: "https://dribbble.com/shots/25916664-Landing-page-features-list-bento-grid",
+    date: "2024-03-20",
+    tags: ["bento", "grid", "dark", "cards", "icons", "features"],
+  }
 ];
 
 export function getDitto(slug: string): Ditto | undefined {

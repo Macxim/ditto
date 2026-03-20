@@ -86,7 +86,7 @@ export default function Home() {
             gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))",
           }}
         >
-          {dittos.map((ditto) => (
+          {dittos.reverse().map((ditto) => (
             <DittoCard key={ditto.slug} ditto={ditto} />
           ))}
         </div>
