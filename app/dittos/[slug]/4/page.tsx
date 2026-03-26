@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 import Color from "color";
 import "./ditto.css";
 
@@ -52,6 +53,8 @@ export default function Ditto4() {
 
   const activeColor = steps[value].color;
 
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <div
       className="ditto-4 min-h-[calc(100vh-12rem)] w-full p-6 flex flex-col items-center justify-center"
@@ -67,14 +70,22 @@ export default function Ditto4() {
         </p>
 
         {/* Track container */}
-        <div className="relative z-10 rounded-full border border-[#e4e6ea] mt-5 px-6 py-5 bg-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <div
+          className="relative z-10 rounded-full border border-[#e4e6ea] mt-5 px-6 py-5 bg-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]"
+          role="slider"
+          aria-valuemin={0}
+          aria-valuemax={steps.length - 1}
+          aria-valuenow={value}
+          aria-valuetext={steps[value].label}
+          tabIndex={0}
+        >
           <div className="flex items-center gap-2">
             {steps.map((step, i) => {
               const isActive = i === value;
               const isFuture = i > value;
               const isSegmentActive = i > value - 1;
 
-              const ringSize = step.dotSize + 16;
+              const ringSize = step.dotSize + 12;
 
               return (
                 <div
@@ -83,31 +94,43 @@ export default function Ditto4() {
                   style={{ flex: i < steps.length - 1 ? "1" : "0" }}
                 >
                   {/* Dot */}
-                  <div
-                    className="relative flex items-center justify-center shrink-0 rounded-full cursor-pointer transition-all duration-300"
+                  <motion.div
+                    className="relative flex items-center justify-center shrink-0 rounded-full cursor-pointer"
                     style={{
                       width: step.dotSize,
                       height: step.dotSize,
                       backgroundColor: isFuture ? "#e1e3e6" : step.color,
                     }}
                     onClick={() => setValue(i)}
+                    onMouseEnter={() => setHovered(i)}
+                    onMouseLeave={() => setHovered(null)}
+                    animate={{
+                      scale: hovered === i ? 1.1 : isActive ? 1.05 : 1,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 1000,
+                      damping: 200,
+                    }}
                   >
                     {/* Dotted ring */}
                     {isActive && (
-                      <div
+                      <motion.div
+                        layoutId="active-ring"
                         className="absolute rounded-full border-2 border-dotted animate-spin-slow pointer-events-none"
                         style={{
                           width: ringSize,
                           height: ringSize,
                           borderColor: step.color,
-                          top: "50%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          animation: "spin 200ms linear",
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 1000,
+                          damping: 100,
                         }}
                       />
                     )}
-                  </div>
+                  </motion.div>
 
                   {/* Segment */}
                   {step.segment && (
@@ -152,11 +175,11 @@ export default function Ditto4() {
                 {step.label}
 
                 {isActive ? (
-                  <div
+                  <motion.div
+                    layoutId="glow"
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[30px] w-[400px] h-[200px] rounded-[200px/100px] blur-[20px]"
-                    style={{
-                      background: `${activeColor}10`,
-                    }}
+                    style={{ background: `${activeColor}10` }}
+                    transition={{ duration: 0.3 }}
                   />
                 ) : null}
               </div>
