@@ -1,0 +1,19 @@
+/*
+  Ditto 4
+*/
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --f-body: 'Inter', '-apple-system', 'BlinkMacSystemFont';
+}
+
+.ditto-4 {
+  --c-bg: #f6f8fa;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) rotate(180deg); }
+}

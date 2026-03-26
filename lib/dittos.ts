@@ -51,10 +51,22 @@ export const dittos: Ditto[] = [
       "Bento grid showcasing feature cards with minimal icons, bold titles, and short descriptions.",
     source: "Dribbble",
     author: "Virgil Pana",
-    authorUrl: "https://dribbble.com/shots/25916664-Landing-page-features-list-bento-grid",
+    authorUrl:
+      "https://dribbble.com/shots/25916664-Landing-page-features-list-bento-grid",
     date: "2024-03-20",
     tags: ["bento", "grid", "dark", "cards", "icons", "features"],
-  }
+  },
+  {
+    slug: "4",
+    title: "Minimum trading volume",
+    description:
+      "Range slider displaying trading values with beautiful gradients and colorful shadows",
+    source: "Dribbble",
+    author: "George Vanjek",
+    authorUrl: "https://dribbble.com/shots/24889988--Minimum-trading-value",
+    date: "2024-03-25",
+    tags: ["slider", "range", "input", "volume", "animation"],
+  },
 ];
 
 export function getDitto(slug: string): Ditto | undefined {
