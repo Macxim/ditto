@@ -69,7 +69,7 @@ export const dittos: Ditto[] = [
   },
   {
     slug: "5",
-    title: "Card Number Reveal",
+    title: "Card number reveal",
     description: "A masked card number field with a subtle reveal, copy-to-clipboard button.",
     source: "X",
     author: "Nitish Khagwal",
