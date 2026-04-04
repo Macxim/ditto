@@ -1,0 +1,43 @@
+/*
+  Ditto 5 — Card Number Reveal
+*/
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --f-body: 'Inter', '-apple-system', 'BlinkMacSystemFont';
+}
+
+.ditto-5 {
+  --c-bg: #fefefe;
+
+  .card-number {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+}
+
+/* Shine wave animation on individual digits */
+@keyframes shineWave {
+  0% {
+    color: #222;
+  }
+
+  30% {
+    color: #8b8b8b;
+  }
+
+  60% {
+    color: #222;
+  }
+
+  100% {
+    color: #222;
+  }
+}
+
+.shine-digit {
+  animation: shineWave 0.8s ease-in-out forwards;
+  display: inline-block;
+}

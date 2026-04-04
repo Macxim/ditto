@@ -67,6 +67,16 @@ export const dittos: Ditto[] = [
     date: "2024-03-25",
     tags: ["slider", "range", "input", "volume", "animation"],
   },
+  {
+    slug: "5",
+    title: "Card Number Reveal",
+    description: "A masked card number field with a subtle reveal, copy-to-clipboard button.",
+    source: "X",
+    author: "Nitish Khagwal",
+    authorUrl: "https://x.com/nitishkmrk/status/2028721031314378937",
+    date: "2026-04-04",
+    tags: ["animation", "banking", "interaction", "form"],
+  },
 ];
 
 export function getDitto(slug: string): Ditto | undefined {

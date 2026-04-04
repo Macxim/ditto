@@ -13,20 +13,18 @@
 
 .ditto-2 {
   --c-bg: #f8f8f8;
-  --blue-gradient: radial-gradient(
-    circle at 71% 28%,
-    #4b7cee 0%,
-    #2562e3 28%,
-    #2265ed 100%
-  );
-}
+  --blue-gradient: radial-gradient(circle at 71% 28%,
+      #4b7cee 0%,
+      #2562e3 28%,
+      #2265ed 100%);
 
 
-.card {
-  background: var(--blue-gradient);
-  border: 0.5px solid rgba(18, 74, 192, .01);
-  box-shadow:
-    inset 0 0 0 1.5px rgba(255, 255, 255, 0.28),
-    0 8px 16px rgba(40, 70, 200, 0.2),
-    0 24px 64px rgba(40, 70, 200, 0.25);
+  .card {
+    background: var(--blue-gradient);
+    border: 0.5px solid rgba(18, 74, 192, .01);
+    box-shadow:
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.28),
+      0 8px 16px rgba(40, 70, 200, 0.2),
+      0 24px 64px rgba(40, 70, 200, 0.25);
+  }
 }
